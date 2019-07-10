@@ -1,1 +1,1 @@
-# execute as @e[type=minecraft:player] run say spam
+execute as @a at @s if block ~ ~-1 ~ minecraft:cobblestone run kill @s
