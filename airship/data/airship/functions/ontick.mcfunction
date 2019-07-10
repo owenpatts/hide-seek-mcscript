@@ -1,7 +1,5 @@
 # ontick runs once per ingame tick.
 
-execute as @e[type=minecraft:player] run say hello
-
 # Call other functions here:
 execute as @e[type=minecraft:player] run execute at @s run execute as @e[type=minecraft:squid, scores={lifetime=..10}, distance=..6] run execute at @s run function airship:create_airship
 scoreboard players add @e[type=minecraft:squid] lifetime 1
