@@ -1,1 +1,1 @@
-execute as @a at @s if block ~ ~-1 ~ minecraft:cobblestone run kill @s
+execute as @e[type=minecraft:armor_stand,scores={map=1}] run function gamemode:map1
