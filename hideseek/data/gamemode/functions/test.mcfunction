@@ -1,0 +1,1 @@
+# execute as @e[type=minecraft:player] run say spam
