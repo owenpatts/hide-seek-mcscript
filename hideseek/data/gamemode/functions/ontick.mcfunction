@@ -4,11 +4,11 @@
 # ex: function testing:r_click/on_click
 function gamemode:test
 
-# gameClock event handling:
-scoreboard players add @e[tag=tracker,scores={playing=1}] gameClock 1
+# generic gameClock event handling:
+scoreboard players add @e[tag=tracker,scores={gamestate=1..}] gameClock 1
 
-# Seeker assignment
-execute as @e[scores={gameClock=300}] run team join seeker @r
-execute as @e[scores={gameClock=300}] run tellraw @a[team=seeker] [{"text":"You are the ","color":"gold"},{"text":"seeker","color":"dark_red","bold":true},{"text":".  Hunt down the other players before they finish their quest!","color":"gold"}]
-execute as @e[scores={gameClock=300}] run tellraw @a[team=hiders] [{"text":"You are a","color":"gold"},{"text":" hider","color":"dark_green","bold":true},{"text":"! Trade with the NPCs to get a gun and slay the werewolf.","color":"gold"}]
-execute as @e[scores={gameClock=300}] at @e[team=seeker] run playsound minecraft:entity.wolf.howl neutral @a ~ ~ ~ 1 .8
+# Map specific event handling:
+execute as @e[tag=tracker,scores={gamestate=1,map=1}] at @s run function gamemode:map1/gameloop
+execute as @e[tag=tracker,scores={gamestate=1,map=2}] at @s run function gamemode:map2/gameloop
+execute as @e[tag=tracker,scores={gamestate=1,map=3}] at @s run function gamemode:map3/gameloop
+execute as @e[tag=tracker,scores={gamestate=1,map=4}] at @s run function gamemode:map4/gameloop
