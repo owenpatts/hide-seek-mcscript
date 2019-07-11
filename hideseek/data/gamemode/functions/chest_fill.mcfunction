@@ -1,0 +1,2 @@
+execute as @e[sort=random,type=minecraft:armor_stand,limit=1,tag=chest] at @s run data modify block ~ ~ ~ Items append value {Slot:12b, id:"iron_ingot",Count:1b}
+execute as @e[sort=random,type=minecraft:armor_stand,limit=1,tag=chest] at @s run data modify block ~ ~ ~ Items append value {Slot:14b, id:"diamond",Count:1b}

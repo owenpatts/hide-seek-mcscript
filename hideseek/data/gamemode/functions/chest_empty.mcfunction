@@ -1,0 +1,2 @@
+execute as @e[type=minecraft:armor_stand,tag=chest] at @s run data modify block ~ ~ ~ Items append value {Slot:12b, id:"",Count:1b}
+execute as @e[type=minecraft:armor_stand,tag=chest] at @s run data modify block ~ ~ ~ Items append value {Slot:14b, id:"",Count:1b}

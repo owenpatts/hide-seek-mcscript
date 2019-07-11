@@ -1,1 +1,0 @@
-execute as @e[sort=random,type=minecraft:armor_stand,limit=1] at @s run data modify block ~ ~-1 ~ Items append value {Slot:13b, id:"iron_ingot",Count:1b}
