@@ -1,1 +1,0 @@
-execute as @a at @s if block ~ ~-1 ~ minecraft:cobblestone run kill @s

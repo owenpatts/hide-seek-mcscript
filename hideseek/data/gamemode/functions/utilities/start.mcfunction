@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:armor_stand,tag=tracker,scores={map=1},limit=1] run function gamemode:map1/init
