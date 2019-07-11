@@ -4,6 +4,7 @@ execute as @e[scores={gameClock=300,gamestate=1}] run tellraw @a[team=seeker] [{
 execute as @e[scores={gameClock=300,gamestate=1}] run tellraw @a[team=hiders] [{"text":"You are a","color":"gold"},{"text":" hider","color":"dark_green","bold":true},{"text":"! Trade with the NPCs to get a gun and slay the werewolf.","color":"gold"}]
 execute as @e[scores={gameClock=300,gamestate=1}] at @e[team=seeker] run playsound minecraft:entity.wolf.howl neutral @a ~ ~ ~ 1 .8
 execute as @e[scores={gameClock=300,gamestate=1}] run effect give @e[team=seeker] minecraft:strength 999999 255 true
+execute as @e[scores={gameClock=300,gamestate=1}] run function gamemode:chest_fill
 
 # Handling hider death:
 execute as @e[team=hiders,scores={dead=1}] run spawnpoint @s ~ ~ ~
@@ -27,9 +28,8 @@ execute as @e[tag=tracker,scores={gameClock=3600..}] run title @a title {"text":
 execute as @e[tag=tracker,scores={gameClock=3600..}] run scoreboard players set @s gamestate 2
 
 # ======================= Game end handling =============================
-execute as @e[scores={gameClock=100,gamestate=2}] run teleport @a @e[tag=lobbySpawn,limit=1]
-execute as @e[scores={gameClock=100,gamestate=2}] run scoreboard players set @s gamestate 0
-execute as @e[tag=tracker,scores={gameClock=301..,gamestate=2}] run scoreboard players set @s gameClock 0
+execute as @e[tag=tracker,scores={gameClock=301..,gamestate=2}] run schedule function gamemode:game_end 5s
+
 
 
 
