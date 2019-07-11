@@ -1,1 +1,0 @@
-execute as @e[type=minecraft:armor_stand,scores={map=1}] run function gamemode:map1
